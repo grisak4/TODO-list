@@ -3,3 +3,62 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background: rgb(22, 22, 22);
+    min-height: 890px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.content_box{
+    width: 500px;
+    min-height: 600px;
+    background-color: rgb(49, 49, 49);
+    overflow: hidden;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 5px 3px 50px rgb(0, 0, 0);
+    padding: 30px;
+    font-family: 'Poppins';
+}
+.content_box_infa{
+    margin:30px 0;
+}
+.input_text {
+    width: 350px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 7px;
+    font-size: 1rem;
+}
+.button_form{
+    width: 35px;
+    height: 33px;
+    border-radius: 7px;
+    font-family: 'Poppins';
+    font-size: 1.3rem;
+    font-weight: 500;
+    background-color: rgb(23, 238, 173);
+    border: none;
+}
+.button_form:hover{
+    background-color: rgb(34, 216, 192);
+}
+.content_box_footer_text, .content_box_footer_button{
+    display: inline-block;
+}
+.footer_button{
+    background-color: rgb(23, 238, 173);
+    border: none;
+    width: 120px;
+    height: 25px;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 400;
+}
+.footer_button:hover{
+    background-color: rgb(34, 216, 192);
+}

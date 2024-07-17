@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 body {
     background: rgb(22, 22, 22);
@@ -46,6 +47,15 @@ body {
 .button_form:hover{
     background-color: rgb(34, 216, 192);
 }
+.content_box_footer_infa_to-do{
+    min-height: 350px;
+    margin-top: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+li .list_to-do{
+    
+}
 .content_box_footer_text, .content_box_footer_button{
     display: inline-block;
 }
@@ -58,6 +68,7 @@ body {
     font-family: 'Poppins';
     font-size: 1rem;
     font-weight: 400;
+    margin-left: 30px;
 }
 .footer_button:hover{
     background-color: rgb(34, 216, 192);

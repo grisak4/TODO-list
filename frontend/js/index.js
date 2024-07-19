@@ -76,28 +76,37 @@ document.getElementById('form').addEventListener('submit', function(event) {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const clearButton = document.querySelector('.footer_button');
+document.getElementById('delet').addEventListener('click', function() {
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'ngrok-skip-browser-warning': 'anyvalue'
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    const deletePromises = data.map(task => 
+      fetch(`https://beagle-mighty-terribly.ngrok-free.app/api/v1/deleteTask/${task.id}`, {
+        method: 'DELETE',
+        headers: {
+          'ngrok-skip-browser-warning': 'anyvalue'
+        }
+      })
+    );
 
-  clearButton.addEventListener('click', function (event) {
-      event.preventDefault(); // Отмена стандартного поведения кнопки
-
-      // DELETE-запрос для удаления всех задач
-      fetch(`https://beagle-mighty-terribly.ngrok-free.app/api/v1/deleteTask/`, {
-          method: 'DELETE',
-      })
-      .then(response => {
-          if (!response.ok) {
-              throw new Error('Ошибка сети при удалении задач');
-          }
-          return response.json(); // При необходимости, для получения ответа
-      })
-      .then(data => {
-          console.log('Все задачи удалены', data);
-          // Здесь вы можете обновить интерфейс пользователя или выполнить другие действия
-      })
-      .catch(error => {
-          console.error('Произошла ошибка:', error);
-      });
+    // Ждем, пока все удаление завершится
+    return Promise.all(deletePromises);
+  })
+  .then(() => {
+    const container = document.getElementById('js');
+    container.innerHTML = ''; // Очищаем контейнер
+  })
+  .catch(error => {
+    console.error('Error:', error);
   });
 });

@@ -99,12 +99,11 @@ document.getElementById('delet').addEventListener('click', function() {
       })
     );
 
-    // Ждем, пока все удаление завершится
     return Promise.all(deletePromises);
   })
   .then(() => {
     const container = document.getElementById('js');
-    container.innerHTML = ''; // Очищаем контейнер
+    container.innerHTML = ''; 
   })
   .catch(error => {
     console.error('Error:', error);

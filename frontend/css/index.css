@@ -27,7 +27,7 @@ body {
     margin:30px 0;
 }
 .input_text {
-    width: 350px;
+    width: 89%;
     height: 35px;
     border-radius: 10px;
     border: 1px solid rgb(0, 0, 0);
@@ -35,7 +35,7 @@ body {
     font-size: 1rem;
 }
 .button_form{
-    width: 35px;
+    width: 10%;
     height: 33px;
     border-radius: 7px;
     font-family: 'Poppins';
@@ -48,13 +48,22 @@ body {
     background-color: rgb(34, 216, 192);
 }
 .content_box_footer_infa_to-do{
-    min-height: 350px;
+    height: 350px;
     margin-top: 20px;
+    overflow-y: scroll;
+}
+.content_box_footer_infa_to-do div{
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 254, 254, 0.253);
     overflow: hidden;
     overflow-y: auto;
-}
-li .list_to-do{
-    
+    width: 100%;
+    min-height: 60px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 .content_box_footer_text, .content_box_footer_button{
     display: inline-block;

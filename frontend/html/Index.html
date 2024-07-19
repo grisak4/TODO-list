@@ -16,21 +16,22 @@
         </div>
         <div class="content_box_infa">
             <div class="contetn_box_infa_form">
-                <form  class = "form" action="https://f95a-46-180-160-203.ngrok-free.app" method="post">
-                    <input type="text" class = "input_text" placeholder ="Add your new todo" name = "input" value = "text">
+                <form  class = "form" id = 'form'>
+                    <input type="text" class = "input_text" placeholder ="Add your new todo" name = "input" value="">
                     <button type="submit" class="button_form">+</button>
                 </form>
             </div>
-            <div class="content_box_footer_infa_to-do">
+            <div class="content_box_footer_infa_to-do" id="js">
             </div>
         </div>
         <div class="content_box_footer">
             <div class="content_box_footer_text"><p>You have 0 pading tasks</p></div>
             <div class="content_box_footer_button">
-                <button class="footer_button" name = "buttonDelet" >Clear all</button>
+                <button class="footer_button" name = "buttonDelet" id = "delet">Clear all</button>
             </div>
         </div>
         </div>
     </div>
+    <script src = "../js/index.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	serverAddr = "127.0.0.1:8080"
+	serverAddr = "127.0.0.1:8081"
 )
 
 func main() {
@@ -24,8 +24,8 @@ func main() {
 	config.AllowHeaders = []string{"Origin", "Content-Type", "Accept", "ngrok-skip-browser-warning"}
 
 	// Запуск
-	router := gin.Default()
-	router.Use(cors.New(config))
-	routes.Initialize(router)
-	router.Run(serverAddr)
+	r := gin.Default()
+	r.Use(cors.New(config))
+	routes.Initialize(r)
+	r.Run(serverAddr)
 }
